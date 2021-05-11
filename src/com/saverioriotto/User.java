@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "user")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"Name", "Surname", "Age", "Username", "Email"}) //Order of the fields in XML
+@XmlType(propOrder = {"Name", "Surname", "Age", "Username", "Email"})
 @XmlAccessorOrder(XmlAccessOrder.ALPHABETICAL)
 public class User {
 	

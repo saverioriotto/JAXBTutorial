@@ -20,28 +20,15 @@ public class JAXBTutorial {
 		JAXBContext jaxbContext = null;
        
 		try {
-
-            //jaxbContext = JAXBContext.newInstance(Company.class);
-
-            // EclipseLink MOXy needs jaxb.properties at the same package with Company.class or Staff.class
-            // Alternative, I prefer define this via eclipse JAXBContextFactory manually.
+           
             jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory
                     .createContext(new Class[] {User.class}, null);
-
+            
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
-            // output pretty printed
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-            //jaxbMarshaller.marshal(createCompanyObject(), new File("C:\\test\\company.xml"));
-
+            
             jaxbMarshaller.marshal(CreateUserObject(), System.out);
-
-            // XML Unmarshalling
-            /*File file = new File("C:\\test\\company.xml");
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            Company o = (Company) jaxbUnmarshaller.unmarshal(file);
-            System.out.println(o);*/
 
         } catch (JAXBException e) {
             e.printStackTrace();
@@ -61,11 +48,7 @@ public class JAXBTutorial {
 		
 		JAXBContext jaxbContext = null;
 		try {
-	          // Normal JAXB RI
-	          //jaxbContext = JAXBContext.newInstance(Fruit.class);
-
-	          // EclipseLink MOXy needs jaxb.properties at the same package with Fruit.class
-	          // Alternative, I prefer define this via eclipse JAXBContextFactory manually.
+	        
 	          jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory
 	                  .createContext(new Class[]{User.class}, null);
 
